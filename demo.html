@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>restaurant project</title>
+    <link rel="stylesheet" href="restaurant.css">
+    <link rel="stylesheet" href="demo.css">
+    <link rel="stylesheet" href="style.css"> <!--heading css, button css-->
+    <link rel="stylesheet" href="styles.css"> <!--footer css-->
+    <link rel="stylesheet" href="user_rating.css">
+    <link rel="stylesheet" href="review.css">
+    <!-- poppins font -->
+    <link rel="stylesheet" href="https://fonts.google.com/share?selection.family=Roboto:ital,wght@0,100..900;1,100..900">
+    <!-- using font awesome -->
+      <script src="https://fontawesome.com/icons/font-awesome?f=classic&s=solid"></script>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+  <!-- <div class="hh">
+    <br>
+    <h2 style="font-size: 50px;color:white"> OUR RESTAURANT</h2><br>
+  </div>
+    <hr size="2" color="white"> -->
+    <!-- heading -->
+     <div class="hh">
+    <h2>OUR RESTAURANT</h2>
+    <hr class="divider">
+  </div>
+    
+    <!-- <a href="demo.html"><button class="bttn">HOME</button></a>
+    <a href="menu.html"><button class="bttn">MENU</button></a>
+    <a href="tablebook.html"><button class="bttn">BOOK A TABLE</button></a>
+    <a href="orderonline.html"><button class="bttn">ORDER ONLINE</button></a>
+    <a href="contactus.html"><button class="bttn">CONTACT US </button></a>
+    <a href="contactus.html"><button class="bttn">SIGN IN</button></a>
+    <a href="home.html"><button class="bttn">SERVICES</button></a>
+    <a href="tablebook.html"><button class="bttn">OVER VIEW</button></a> -->
+    <div class="container">
+      <a href="demo.html"><label class="button" >HOME  </label></a>
+      <a href="menu copy.html"><label class="button">MENU</label></a>
+      <a href="tablebook.html"><label class="button">BOOK A TABLE</label></a>
+      <a href="onlineorder.html"><label class="button">ORDER ONLINE</label></a>
+      <a href="services.html"><label class="button">SERVICES</label></a>
+      <a href="about_us.html"><label class="button">ABOUT US</label></a>
+      <a href="signin copy.html"><label class="button">SIGN IN</label></a>
+    </div>
+    <hr size="2" color="white">
+  <div class="slideshow-container">
+    <div class="link">
+    <!-- <input type="button">
+    <input type="button1">
+    <input type="button2">  
+    <input type="button3"> -->
+    </div>
+    <div class="mySlides fade">
+      <!-- <h2 style="font-size: 50px"> SREEPARNA'S  RESTAURANT</h2> -->
+      <div class="numbertext">1 / 3</div>
+      <img src="crispy_chicken.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides fade">
+      <!-- <h2 style="font-size: 50px"> SREEPARNA'S  RESTAURANT</h2> -->
+      <div class="numbertext">2 / 3</div>
+        <img src="food1.webp" style="width:100%">
+      </div>
+
+    <div class="mySlides fade">
+      <!-- <h2 style="font-size: 50px"> SREEPARNA'S  RESTAURANT</h2> -->
+      <div class="numbertext">3 / 3</div>
+        <img src="istockphoto-545286388-612x612.jpg" style="width:100%">
+    </div>
+
+  </div>
+  <br>
+<div style="text-align:center">
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+</div>
+<script>
+let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+  setTimeout(showSlides, 2000); // Change image every 2 seconds
+}
+</script>
+<br>
+<!-- <div class="achivment">
+  <div class="achiv-image">
+    <img src="barger1.avif" alt="Image">
+  </div>
+  <div class="achiv-text">
+    <h2> Welcome to
+     The world of testy
+      & Fresh food
+    </h2>
+    <p>Discover a journey of flavors at our exquisite restaurant.Immerse yourself in a delightful dining experience crafted with passion and precision</p> 
+      <!--search bar  -->
+    <!-- <div class="search-container">
+      <input type="text" class="search-input" placeholder="Search food...">
+        <button class="search-button">Search</button>
+    </div>
+  </div>
+</div> --> -->
+  <!-- <hr>
+  <marquee width="100%" direction="left" height="100px" >
+    <h2 style="font-size: 50px"> Welcome to
+     The world of testy
+      & Fresh food</h2></marquee>
+      <br>
+      <!--search bar  -->
+      <!--<div class="search-container">
+    <input type="text" class="search-input" placeholder="Search food...">
+    <button class="search-button">Search</button>
+  </div>
+  <br>
+  <div class="right1">
+  <button class="bttn1">ORDER NOW</button> -->
+  <!-- <br><br><br><br><hr><hr> -->
+  <div id="chef">
+        <h1 id="section">Our Chef</h1>
+        <div id="chef_row">
+            <div class="chef_col">
+                <div id="img">
+                    <img src="1.png ">
+                </div>
+                <div>
+                     <h4> Muddsar Qayyum</h4>  
+                </div>
+            </div>
+            <div class="chef_col">
+                <div id="img">
+                    <img src="2.png ">
+                </div>
+                <div>
+                     <h4> Muddsar Qayyum</h4>  
+                </div>
+            </div>
+            <div class="chef_col">
+                <div id="img">
+                    <img src="3.png ">
+                </div>
+                <div>
+                     <h4> Muddsar Qayyum</h4>  
+                </div>
+            </div>
+            <div class="chef_col">
+                <div id="img">
+                    <img src="4.png ">
+                </div>
+                <div>
+                     <h4> Muddsar Qayyum</h4>  
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- reviews of customers -->
+<section id="testimonials">
+  <div class="testimonial-heading">
+    <span>comments</span>
+    <h1>customers Says</h1>
+  </div>
+  <!-- testimonials box container -->
+  <div class="testimonial-box-container">
+    <!-- box1 -->
+     <div class="testimonial-box">
+      <!-- top -->
+       <div class="box-top">
+        <!-- profile -->
+         <div class="profile">
+          <!-- img -->
+           <div class="profile-img">
+            <img src="IMG_20250202_143443~2.jpg">
+           </div>
+           <!-- name and user name -->
+            <div class="name-user">
+              <strong> sreeparna Bhowmick</strong>
+              <span>sreeparnabhow8gmail.com</span>
+            </div>
+         </div>
+         <!-- reviews -->
+          <div class="reviews">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="far fa-star"></i>
+          </div>
+       </div>
+       <!-- comments -->
+        <div class="client-comment">
+          <p>The [signature dish] was absolutely amazing! Perfectly balanced flavors, beautifully presented, and cooked to perfection. It’s a must-try for anyone visiting [restaurant name]</p>
+        </div>
+     </div>
+  </div>
+   <div class="testimonial-box-container">
+    <!-- box1 -->
+     <div class="testimonial-box">
+      <!-- top -->
+       <div class="box-top">
+        <!-- profile -->
+         <div class="profile">
+          <!-- img -->
+           <div class="profile-img">
+            <img src="IMG-20250329-WA0001.jpg">
+           </div>
+           <!-- name and user name -->
+            <div class="name-user">
+              <strong>Tanisha Das</strong>
+              <span>tanishadas3gmail.com</span>
+            </div>
+         </div>
+         <!-- reviews -->
+          <div class="reviews">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+       </div>
+       <!-- comments -->
+        <div class="client-comment">
+          <p>Hands down, some of the best food I’ve had recently! The freshness of the ingredients and the unique flavors in the [dish name] were unforgettable. Highly recommended for food enthusiasts!</p>
+        </div>
+     </div>
+  </div>
+   <div class="testimonial-box-container">
+    <!-- box1 -->
+     <div class="testimonial-box">
+      <!-- top -->
+       <div class="box-top">
+        <!-- profile -->
+         <div class="profile">
+          <!-- img -->
+           <div class="profile-img">
+            <img src="dinner1.jpg ">
+           </div>
+           <!-- name and user name -->
+            <div class="name-user">
+              <strong>surjatapa </strong>
+              <span>surjatapa9gmail.com</span>
+            </div>
+         </div>
+         <!-- reviews -->
+          <div class="reviews">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+       </div>
+       <!-- comments -->
+        <div class="client-comment">
+          <p>This was more than just a meal—it was an experience! The staff remembered my allergy details and ensured I had a safe and delicious dining experience. Bravo to the team at [restaurant name]!</p>
+        </div>
+     </div>
+  </div>
+   <div class="testimonial-box-container">
+    <!-- box1 -->
+     <div class="testimonial-box">
+      <!-- top -->
+       <div class="box-top">
+        <!-- profile -->
+         <div class="profile">
+          <!-- img -->
+           <div class="profile-img">
+            <img src="dinner1.jpg ">
+           </div>
+           <!-- name and user name -->
+            <div class="name-user">
+              <strong>Nandini Banik</strong>
+              <span>nandinibanik23gmail.com</span>
+            </div>
+         </div>
+         <!-- reviews -->
+          <div class="reviews">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+       </div>
+       <!-- comments -->
+        <div class="client-comment">
+          <p>If you’re a foodie like me, you’ll love this place! The menu has a fantastic selection of dishes, and we loved everything we tried. We only had good comments about the food. I can’t wait to come back again!</p>
+        </div>
+     </div>
+  </div>
+</section>
+<!-- <span class="heading">User Rating</span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star"></span>
+<p>4.1 average based on 254 reviews.</p>
+<hr style="border:3px solid #f1f1f1">
+
+<div class="row">
+  <div class="side">
+    <div>5 star</div>
+  </div>
+  <div class="middle">
+    <div class="bar-container">
+      <div class="bar-5"></div>
+    </div>
+  </div>
+  <div class="side right">
+    <div>150</div>
+  </div>
+  <div class="side">
+    <div>4 star</div>
+  </div>
+  <div class="middle">
+    <div class="bar-container">
+      <div class="bar-4"></div>
+    </div>
+  </div>
+  <div class="side right">
+    <div>63</div>
+  </div>
+  <div class="side">
+    <div>3 star</div>
+  </div>
+  <div class="middle">
+    <div class="bar-container">
+      <div class="bar-3"></div>
+    </div>
+  </div>
+  <div class="side right">
+    <div>15</div>
+  </div>
+  <div class="side">
+    <div>2 star</div>
+  </div>
+  <div class="middle">
+    <div class="bar-container">
+      <div class="bar-2"></div>
+    </div>
+  </div>
+  <div class="side right">
+    <div>6</div>
+  </div>
+  <div class="side">
+    <div>1 star</div>
+  </div>
+  <div class="middle">
+    <div class="bar-container">
+      <div class="bar-1"></div>
+    </div>
+  </div>
+  <div class="side right">
+    <div>20</div>
+  </div>
+</div> -->
+<div class="rating-box">
+    <div class="heading">User Rating</div>
+
+    <div class="stars">
+      <span class="fa fa-star"></span>
+      <span class="fa fa-star"></span>
+      <span class="fa fa-star"></span>
+      <span class="fa fa-star"></span>
+      <span class="fa fa-star unchecked"></span>
+    </div>
+
+    <p class="average">4.1 average based on 254 reviews.</p>
+    <hr style="border: 1px solid #f1f1f1; margin: 20px 0;">
+
+    <!-- Rating Rows -->
+    <div class="row">
+      <div class="label">5 star</div>
+      <div class="bar-container"><div class="bar bar-5"></div></div>
+      <div class="count">150</div>
+    </div>
+
+    <div class="row">
+      <div class="label">4 star</div>
+      <div class="bar-container"><div class="bar bar-4"></div></div>
+      <div class="count">63</div>
+    </div>
+
+    <div class="row">
+      <div class="label">3 star</div>
+      <div class="bar-container"><div class="bar bar-3"></div></div>
+      <div class="count">15</div>
+    </div>
+
+    <div class="row">
+      <div class="label">2 star</div>
+      <div class="bar-container"><div class="bar bar-2"></div></div>
+      <div class="count">6</div>
+    </div>
+
+    <div class="row">
+      <div class="label">1 star</div>
+      <div class="bar-container"><div class="bar bar-1"></div></div>
+      <div class="count">20</div>
+    </div>
+  </div>
+<br><br>
+<!-- footer section -->
+  <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>About Us</h4>
+                <p>Learn more about our restaurant and mission.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Us</h4>
+                <p>Email: contact@example.com</p>
+                <p>Phone: +123-456-7890</p>
+                <ul>
+    <input type="button">
+    <input type="button1">
+    <input type="button2">  
+    <input type="button3">
+    </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Your Company. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
+<!-- 192.168.148.22 -->
