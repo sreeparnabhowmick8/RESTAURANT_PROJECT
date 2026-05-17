@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Our restaurant</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana,  sans-serif;
+      background-color: #fffaf0;
+    }
+
+    .header {
+      background-color:#FF1493;
+      color: white;
+      padding: 40px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .slogan {
+  font-size: 2em;
+  font-weight: bold;
+  font-family: 'Cursive', sans-serif;  /* Added cursive font */
+}
+
+
+    .owner-info {
+      display: flex;
+      align-items: center;
+    }
+
+    .owner-photo {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-right: 10px;
+      border: 2px solid white;
+    }
+
+    .owner-name {
+      font-size: 1.2em;
+      font-weight: 500;
+    }
+
+    .content {
+      padding: 100px 20px;
+      text-align: center;
+      color: #333;
+    }
+    .reservation-heading {
+      font-size: 1.5em;
+      margin-bottom: 20px;
+      color: #FF1493;
+    }
+
+    .reservation-form {
+      max-width: 500px;
+      margin: 0 auto;
+      text-align: left;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      font-size: 1em;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      display: inline-block;
+      margin-top: 10px;
+      background-color: #FF1493;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1em;
+    }
+    button:hover {
+      background-color: #e01383;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <div class="slogan">"I wanted to thank you for inviting me down for that amazing dinner the night.The food was extraordinary"</div>
+    <div class="owner-info">
+      <img src="owner-photo.jpg" alt="Owner Photo" class="owner-photo">
+      <div class="owner-name">Chef Suryatapa</div>
+    </div>
+  </div>
+  <div class="content">
+  </div>
+    <h2 class="reservation-heading">Online Reservation Booking Request [Phone No.] or Fill Out Order Form:-</h2>
+    <form class="reservation-form">
+      <div class="form-group">
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="name" placeholder="Your full name">
+      </div>
+
+      <div class="form-group">
+        <label for="phone"> Your Phone No.</label>
+        <input type="tel" id="phone" name="phone" placeholder="e.g. 123-456-7890">
+      </div>
+
+      <div class="form-group">
+        <label for="table">Book Table of Choice (1-4 Person)</label>
+        <select id="table" name="table">
+          <option value="1">1 Person</option>
+          <option value="2">2 People</option>
+          <option value="3">3 People</option>
+          <option value="4">4 People</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="date"> Date for Reservation</label>
+        <input type="date" id="date" name="date">
+      </div>
+
+      <div class="form-group">
+        <label for="time">Time (in hours) for Booking</label>
+        <input type="time" id="time" name="time">
+      </div>
+
+      <div class="form-group">
+        <label for="message">Insert Message (if any)</label>
+        <textarea id="message" name="message" rows="4" placeholder="Your message or request..."></textarea>
+      </div>
+
+      <button type="submit">Submit Reservation</button>
+    </form>
+  </div>
+</body>
+</html>

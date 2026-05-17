@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Online</title>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body{
+      background:#f5f5f5;
+    }
+
+    /* HERO SECTION */
+
+    /* .hero{
+      height:300px;
+      background:
+      linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+      url("foodbg.jpg");
+
+      background-size:cover;
+      background-position:center;
+
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      flex-direction:column;
+
+      color:white;
+      text-align:center;
+    } */
+     .hero{
+  height:300px;
+
+  /* SAME BACKGROUND AS MENU PAGE */
+
+  background:
+  linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+  url("food1.webp");
+
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+
+  color:white;
+  text-align:center;
+}
+
+    .hero h1{
+      font-size:55px;
+      margin-bottom:10px;
+      letter-spacing:2px;
+    }
+
+    .hero p{
+      font-size:20px;
+    }
+
+    /* MAIN CONTAINER */
+
+    .main-container{
+      width:100%;
+      display:flex;
+      justify-content:center;
+      align-items:flex-start;
+      gap:40px;
+      padding:50px 20px;
+      flex-wrap:wrap;
+    }
+
+    /* LEFT SIDE */
+
+    .info-box{
+      width:350px;
+      background:white;
+      padding:30px;
+      border-radius:20px;
+      box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .info-box h2{
+      margin-bottom:25px;
+      color:#e53935;
+      text-align:center;
+    }
+
+    .info-item{
+      display:flex;
+      align-items:center;
+      gap:15px;
+      margin:20px 0;
+      padding:12px;
+      border-radius:10px;
+      background:#fafafa;
+      transition:0.3s;
+    }
+
+    .info-item:hover{
+      background:#ffeaea;
+      transform:translateY(-3px);
+    }
+
+    .info-item img{
+      width:35px;
+      height:35px;
+    }
+
+    .address-bar{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      background:#ffebee;
+      padding:15px;
+      border-radius:12px;
+      cursor:pointer;
+      transition:0.3s;
+      font-weight:bold;
+      color:#d32f2f;
+    }
+
+    .address-bar:hover{
+      background:#ffcdd2;
+      transform:scale(1.02);
+    }
+
+    /* FORM BOX */
+
+    .form-box{
+      width:420px;
+      background:white;
+      padding:35px;
+      border-radius:20px;
+      box-shadow:0 5px 15px rgba(0,0,0,0.1);
+      display:none;
+      animation:fadeIn 0.5s ease;
+    }
+
+    @keyframes fadeIn{
+      from{
+        opacity:0;
+        transform:translateY(20px);
+      }
+
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+
+    .form-box h2{
+      text-align:center;
+      margin-bottom:25px;
+      color:#e53935;
+    }
+
+    .form-box input,
+    .form-box textarea{
+
+      width:100%;
+      padding:14px;
+      margin:12px 0;
+      border:1px solid #ccc;
+      border-radius:10px;
+      outline:none;
+      font-size:15px;
+      transition:0.3s;
+    }
+
+    .form-box input:focus,
+    .form-box textarea:focus{
+      border-color:#e53935;
+      box-shadow:0 0 5px rgba(229,57,53,0.4);
+    }
+
+    .form-box textarea{
+      resize:none;
+      height:90px;
+    }
+
+    /* BUTTON */
+
+    .submit-red{
+      width:100%;
+      padding:14px;
+      margin-top:20px;
+
+      background:linear-gradient(to right,#e53935,#ff6f61);
+
+      color:white;
+      border:none;
+      border-radius:12px;
+
+      font-size:18px;
+      font-weight:bold;
+
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    .submit-red:hover{
+      transform:scale(1.03);
+      box-shadow:0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    /* SUCCESS MESSAGE */
+
+    .success-message{
+      margin-top:15px;
+      text-align:center;
+      color:green;
+      font-weight:bold;
+      display:none;
+    }
+
+    /* RESPONSIVE */
+
+    @media(max-width:768px){
+
+      .hero h1{
+        font-size:38px;
+      }
+
+      .hero p{
+        font-size:16px;
+      }
+
+      .form-box,
+      .info-box{
+        width:100%;
+        max-width:400px;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <h1>Order Food Online</h1>
+    <p>Fresh Food Delivered Fast To Your Doorstep</p>
+
+  </section>
+
+  <!-- MAIN SECTION -->
+
+  <div class="main-container">
+
+    <!-- INFO BOX -->
+
+    <div class="info-box">
+
+      <h2>Contact & Delivery</h2>
+
+      <!-- DELIVERY ADDRESS -->
+
+      <div class="address-bar" onclick="showFormBox()">
+
+        <img src="https://img.icons8.com/ios-filled/50/marker.png" alt="Location">
+
+        <span>Set Delivery Address</span>
+
+      </div>
+
+      <!-- PHONE -->
+
+      <div class="info-item">
+
+        <img src="https://img.icons8.com/ios-filled/50/phone.png" alt="Phone">
+
+        <div>
+          <strong>0123456787</strong><br>
+          <small>Call Us Anytime</small>
+        </div>
+
+      </div>
+
+      <!-- WHATSAPP -->
+
+      <div class="info-item">
+
+        <img src="https://img.icons8.com/ios-filled/50/whatsapp.png" alt="WhatsApp">
+
+        <div>
+          <strong>2465378910</strong><br>
+          <small>WhatsApp Support</small>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- FORM -->
+
+    <div id="formBox" class="form-box">
+
+      <h2>Delivery Details</h2>
+
+      <form onsubmit="submitForm(event)">
+
+        <input type="text" placeholder="Full Name" required>
+
+        <textarea placeholder="Full Address" required></textarea>
+
+        <input type="tel" placeholder="Mobile Number" required>
+
+        <input type="text" placeholder="Pin Code" required>
+
+        <input type="text" placeholder="Landmark">
+
+        <button type="submit" class="submit-red">
+          Place Order
+        </button>
+
+      </form>
+
+      <div id="successMessage" class="success-message">
+        ✅ Your Order Has Been Submitted Successfully!
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- SCRIPT -->
+
+  <script>
+
+    function showFormBox(){
+
+      document.getElementById("formBox").style.display = "block";
+
+      window.scrollTo({
+        top: document.getElementById("formBox").offsetTop - 50,
+        behavior: "smooth"
+      });
+    }
+
+    function submitForm(event){
+
+      event.preventDefault();
+
+      document.getElementById("successMessage").style.display = "block";
+    }
+
+  </script>
+
+</body>
+</html>

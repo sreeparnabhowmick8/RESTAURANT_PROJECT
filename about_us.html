@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>About Us - Our Restaurant</title>
+
+  <!-- GOOGLE FONT -->
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- FONT AWESOME -->
+
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins', sans-serif;
+    }
+
+    body{
+      background:#fff8f0;
+      color:#333;
+      line-height:1.7;
+    }
+
+    /* HERO SECTION */
+
+    .hero{
+
+      height:65vh;
+
+      background:
+      linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+      url("food1.webp");
+
+      background-size:cover;
+      background-position:center;
+
+      display:flex;
+      justify-content:center;
+      align-items:center;
+
+      text-align:center;
+
+      color:white;
+
+      padding:20px;
+    }
+
+    .hero-content h1{
+
+      font-size:70px;
+
+      letter-spacing:3px;
+
+      margin-bottom:15px;
+
+      animation:fadeIn 1.5s ease;
+    }
+
+    .hero-content p{
+
+      font-size:22px;
+
+      max-width:700px;
+
+      margin:auto;
+    }
+
+    @keyframes fadeIn{
+
+      from{
+        opacity:0;
+        transform:translateY(20px);
+      }
+
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+
+    /* BREADCRUMB */
+
+    .breadcrumb{
+
+      background:white;
+
+      padding:15px 8%;
+
+      box-shadow:0 2px 8px rgba(0,0,0,0.08);
+    }
+
+    .breadcrumb a{
+
+      text-decoration:none;
+
+      color:#ff145e;
+
+      font-weight:600;
+    }
+
+    .breadcrumb span{
+      color:#666;
+    }
+
+    /* ABOUT SECTION */
+
+    .about{
+
+      max-width:1200px;
+
+      margin:auto;
+
+      padding:80px 8%;
+    }
+
+    .section-title{
+
+      text-align:center;
+
+      margin-bottom:60px;
+    }
+
+    .section-title h2{
+
+      font-size:45px;
+
+      color:#ff145e;
+
+      margin-bottom:15px;
+    }
+
+    .section-title p{
+
+      color:#666;
+
+      font-size:18px;
+    }
+
+    /* STORY SECTION */
+
+    .story-container{
+
+      display:grid;
+
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+
+      gap:50px;
+
+      align-items:center;
+    }
+
+    .story-text h3{
+
+      font-size:35px;
+
+      margin-bottom:20px;
+
+      color:#222;
+    }
+
+    .story-text p{
+
+      margin-bottom:20px;
+
+      color:#555;
+
+      font-size:17px;
+    }
+
+    .story-image img{
+
+      width:100%;
+
+      border-radius:25px;
+
+      box-shadow:0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    /* FEATURES */
+
+    .features{
+
+      margin-top:80px;
+
+      display:grid;
+
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+      gap:30px;
+    }
+
+    .feature-box{
+
+      background:white;
+
+      padding:35px 25px;
+
+      border-radius:20px;
+
+      text-align:center;
+
+      box-shadow:0 5px 15px rgba(0,0,0,0.08);
+
+      transition:0.3s;
+    }
+
+    .feature-box:hover{
+
+      transform:translateY(-8px);
+    }
+
+    .feature-box i{
+
+      font-size:45px;
+
+      color:#ff145e;
+
+      margin-bottom:20px;
+    }
+
+    .feature-box h4{
+
+      font-size:24px;
+
+      margin-bottom:15px;
+    }
+
+    .feature-box p{
+      color:#666;
+    }
+
+    /* GALLERY */
+
+    .gallery{
+
+      margin-top:90px;
+    }
+
+    .gallery h2{
+
+      text-align:center;
+
+      font-size:42px;
+
+      color:#ff145e;
+
+      margin-bottom:40px;
+    }
+
+    .gallery-container{
+
+      display:grid;
+
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+      gap:25px;
+    }
+
+    .gallery-container img{
+
+      width:100%;
+
+      height:260px;
+
+      object-fit:cover;
+
+      border-radius:20px;
+
+      transition:0.3s;
+
+      box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .gallery-container img:hover{
+
+      transform:scale(1.05);
+    }
+
+    /* TEAM SECTION */
+
+    .team{
+
+      margin-top:90px;
+
+      text-align:center;
+    }
+
+    .team h2{
+
+      font-size:42px;
+
+      color:#ff145e;
+
+      margin-bottom:40px;
+    }
+
+    .team-container{
+
+      display:grid;
+
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+      gap:30px;
+    }
+
+    .team-card{
+
+      background:white;
+
+      border-radius:20px;
+
+      overflow:hidden;
+
+      box-shadow:0 5px 15px rgba(0,0,0,0.08);
+
+      transition:0.3s;
+    }
+
+    .team-card:hover{
+
+      transform:translateY(-8px);
+    }
+
+    .team-card img{
+
+      width:100%;
+
+      height:250px;
+
+      object-fit:cover;
+    }
+
+    .team-card h3{
+
+      margin-top:20px;
+
+      font-size:24px;
+    }
+
+    .team-card p{
+
+      color:#777;
+
+      margin:10px 0 25px;
+    }
+
+    /* FOOTER */
+
+    footer{
+
+      background:#111;
+
+      color:white;
+
+      padding:60px 8% 20px;
+
+      margin-top:80px;
+    }
+
+    .footer-container{
+
+      display:grid;
+
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+      gap:40px;
+    }
+
+    .footer-section h4{
+
+      margin-bottom:20px;
+
+      color:#ff7a18;
+    }
+
+    .footer-section ul{
+      list-style:none;
+    }
+
+    .footer-section ul li{
+      margin:10px 0;
+    }
+
+    .footer-section ul li a{
+
+      text-decoration:none;
+
+      color:white;
+    }
+
+    .footer-section ul li a:hover{
+
+      color:#ff7a18;
+    }
+
+    .social-icons{
+
+      display:flex;
+
+      gap:15px;
+
+      margin-top:20px;
+    }
+
+    .social-icons a{
+
+      width:40px;
+      height:40px;
+
+      display:flex;
+      justify-content:center;
+      align-items:center;
+
+      background:#222;
+
+      border-radius:50%;
+
+      color:white;
+
+      text-decoration:none;
+
+      transition:0.3s;
+    }
+
+    .social-icons a:hover{
+
+      background:#ff145e;
+    }
+
+    .footer-bottom{
+
+      text-align:center;
+
+      margin-top:40px;
+
+      border-top:1px solid #444;
+
+      padding-top:20px;
+    }
+
+    /* RESPONSIVE */
+
+    @media(max-width:768px){
+
+      .hero-content h1{
+        font-size:45px;
+      }
+
+      .hero-content p{
+        font-size:18px;
+      }
+
+      .section-title h2{
+        font-size:35px;
+      }
+
+      .story-text h3{
+        font-size:28px;
+      }
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <!-- HERO SECTION -->
+
+  <section class="hero">
+
+    <div class="hero-content">
+
+      <h1>About Us</h1>
+
+      <p>
+        Discover our story, passion for food,
+        and commitment to creating unforgettable dining experiences.
+      </p>
+
+    </div>
+
+  </section>
+
+  <!-- BREADCRUMB -->
+
+  <nav class="breadcrumb">
+
+    <a href="mainpage.html">HOME</a>
+
+    &gt;
+
+    <span>ABOUT US</span>
+
+  </nav>
+
+  <!-- ABOUT SECTION -->
+
+  <section class="about">
+
+    <!-- TITLE -->
+
+    <div class="section-title">
+
+      <h2>Our Story</h2>
+
+      <p>
+        A journey of flavors, hospitality, and unforgettable moments.
+      </p>
+
+    </div>
+
+    <!-- STORY -->
+
+    <div class="story-container">
+
+      <div class="story-text">
+
+        <h3>Welcome To Our Restaurant</h3>
+
+        <p>
+          Since 2010, Our Restaurant has been serving delicious,
+          freshly prepared meals with passion and love.
+          We believe food is more than just a meal —
+          it’s an experience that brings people together.
+        </p>
+
+        <p>
+          From traditional recipes to modern culinary creations,
+          every dish is crafted using fresh ingredients
+          and authentic flavors to give you the best dining experience.
+        </p>
+
+        <p>
+          Whether you are visiting with family,
+          friends, or someone special,
+          we promise warm hospitality and memorable moments.
+        </p>
+
+      </div>
+
+      <div class="story-image">
+
+        <img src="a-relaxed-outdoor-space.jpg" alt="Restaurant">
+
+      </div>
+
+    </div>
+
+    <!-- FEATURES -->
+
+    <div class="features">
+
+      <div class="feature-box">
+
+        <i class="fas fa-utensils"></i>
+
+        <h4>Delicious Food</h4>
+
+        <p>
+          Fresh ingredients and authentic recipes prepared with care.
+        </p>
+
+      </div>
+
+      <div class="feature-box">
+
+        <i class="fas fa-user-chef"></i>
+
+        <h4>Expert Chefs</h4>
+
+        <p>
+          Our experienced chefs create dishes full of flavor and creativity.
+        </p>
+
+      </div>
+
+      <div class="feature-box">
+
+        <i class="fas fa-heart"></i>
+
+        <h4>Warm Hospitality</h4>
+
+        <p>
+          We focus on making every guest feel welcomed and comfortable.
+        </p>
+
+      </div>
+
+    </div>
+
+    <!-- GALLERY -->
+
+    <div class="gallery">
+
+      <h2>Restaurant Gallery</h2>
+
+      <div class="gallery-container">
+
+        <img src="head-momo.webp" alt="Momo">
+
+        <img src="Kolkata-chicken-biryani.jpg" alt="Food">
+
+        <img src="lunch2.jpg" alt="Fish Dish">
+
+        <img src="crispy_chicken.jpg" alt="Chicken Dish">
+
+        <img src="barger1.avif" alt="barger Dish">
+
+        <img src="lucknowi-chicken-biryani.avif" alt="Chicken-biriyani Dish">
+
+      </div>
+
+    </div>
+
+    <!-- TEAM -->
+
+    <div class="team">
+
+      <h2>Meet Our Chefs</h2>
+
+      <div class="team-container">
+
+        <div class="team-card">
+
+          <img src="1.png" alt="Chef">
+
+          <h3>Chef Muddsar</h3>
+
+          <p>Head Chef</p>
+
+        </div>
+
+        <div class="team-card">
+
+          <img src="2.png" alt="Chef">
+
+          <h3>Chef Isabella</h3>
+
+          <p>Italian Cuisine Expert</p>
+
+        </div>
+
+        <div class="team-card">
+
+          <img src="3.png" alt="Chef">
+
+          <h3>Chef Daniel</h3>
+
+          <p>Asian Cuisine Specialist</p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="footer-container">
+
+      <!-- ABOUT -->
+
+      <div class="footer-section">
+
+        <h4>About Us</h4>
+
+        <p>
+          We provide fresh food, excellent service,
+          and unforgettable dining experiences.
+        </p>
+
+      </div>
+
+      <!-- LINKS -->
+
+      <div class="footer-section">
+
+        <h4>Quick Links</h4>
+
+        <ul>
+
+          <li><a href="mainpage.html">Home</a></li>
+          <li><a href="menu_chat.html">Menu</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="tablebook.html">Book Table</a></li>
+
+        </ul>
+
+      </div>
+
+      <!-- CONTACT -->
+
+      <div class="footer-section">
+
+        <h4>Contact Us</h4>
+
+        <p>Email: contact@restaurant.com</p>
+
+        <p>Phone: +91 9876543210</p>
+
+        <!-- SOCIAL -->
+
+        <div class="social-icons">
+
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+
+          <a href="#"><i class="fab fa-instagram"></i></a>
+
+          <a href="#"><i class="fab fa-twitter"></i></a>
+
+          <a href="#"><i class="fab fa-youtube"></i></a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- FOOTER BOTTOM -->
+
+    <div class="footer-bottom">
+
+      <p>
+        © 2026 Our Restaurant. All Rights Reserved.
+      </p>
+
+    </div>
+
+  </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Our Restaurant</title>
+
+  <!-- FONT AWESOME -->
+
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+  <!-- GOOGLE FONT -->
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins', sans-serif;
+    }
+
+    body{
+      background:#fff8f0;
+      color:#333;
+    }
+
+    /* HERO SECTION */
+
+    .hero{
+
+      height:100vh;
+
+      background:
+      linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+      url("food1.webp");
+
+      background-size:cover;
+      background-position:center;
+
+      position:relative;
+    }
+
+    /* NAVBAR */
+
+    .navbar{
+
+      width:100%;
+
+      display:flex;
+
+      justify-content:space-between;
+
+      align-items:center;
+
+      padding:20px 8%;
+
+      position:absolute;
+
+      top:0;
+      left:0;
+
+      z-index:1000;
+    }
+
+    .logo{
+      color:white;
+      font-size:32px;
+      font-weight:bold;
+    }
+
+    .nav-links{
+      display:flex;
+      gap:18px;
+      flex-wrap:wrap;
+    }
+
+    .nav-links a{
+
+      text-decoration:none;
+
+      color:white;
+
+      padding:10px 18px;
+
+      border-radius:30px;
+
+      transition:0.3s;
+    }
+
+    .nav-links a:hover{
+
+      background:#ff145e;
+    }
+
+    /* HERO CONTENT */
+
+    .hero-content{
+
+      height:100%;
+
+      display:flex;
+
+      justify-content:center;
+
+      align-items:center;
+
+      flex-direction:column;
+
+      text-align:center;
+
+      color:white;
+
+      padding:20px;
+    }
+
+    .hero-content h1{
+
+      font-size:70px;
+
+      margin-bottom:15px;
+    }
+
+    .hero-content p{
+
+      font-size:22px;
+
+      max-width:750px;
+
+      line-height:1.6;
+
+      margin-bottom:30px;
+    }
+
+    .hero-btn{
+
+      text-decoration:none;
+
+      background:linear-gradient(to right,#ff145e,#ff7a18);
+
+      color:white;
+
+      padding:15px 35px;
+
+      border-radius:40px;
+
+      font-size:18px;
+
+      font-weight:bold;
+
+      transition:0.3s;
+    }
+
+    .hero-btn:hover{
+
+      transform:scale(1.05);
+    }
+
+    /* SLIDER */
+
+    .slider-section{
+      padding:80px 5%;
+      text-align:center;
+    }
+
+    .section-title{
+      font-size:42px;
+      color:#ff145e;
+      margin-bottom:40px;
+    }
+
+    .slideshow-container{
+
+      max-width:1200px;
+
+      position:relative;
+
+      margin:auto;
+
+      overflow:hidden;
+
+      border-radius:25px;
+
+      box-shadow:0 8px 20px rgba(0,0,0,0.2);
+    }
+
+    .mySlides{
+      display:none;
+    }
+
+    .mySlides img{
+      width:100%;
+      height:550px;
+      object-fit:cover;
+    }
+
+    .dot{
+
+      height:15px;
+      width:15px;
+
+      margin:0 5px;
+
+      background:#bbb;
+
+      border-radius:50%;
+
+      display:inline-block;
+
+      transition:0.3s;
+    }
+
+    .active{
+      background:#ff145e;
+    }
+
+    /* CHEF SECTION */
+
+    .chef-section{
+      padding:80px 5%;
+      text-align:center;
+    }
+
+    .chef-container{
+
+      display:grid;
+
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+      gap:30px;
+
+      margin-top:40px;
+    }
+
+    .chef-card{
+
+      background:white;
+
+      border-radius:20px;
+
+      overflow:hidden;
+
+      box-shadow:0 5px 15px rgba(0,0,0,0.1);
+
+      transition:0.3s;
+    }
+
+    .chef-card:hover{
+
+      transform:translateY(-8px);
+    }
+
+    .chef-card img{
+
+      width:100%;
+      height:250px;
+      object-fit:cover;
+    }
+
+    .chef-card h3{
+      padding:20px;
+      color:#444;
+    }
+
+    /* TESTIMONIALS */
+
+    .testimonials{
+      padding:80px 5%;
+      background:#fff;
+      text-align:center;
+    }
+
+    .testimonial-container{
+
+      display:grid;
+
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+      gap:30px;
+
+      margin-top:40px;
+    }
+
+    .testimonial-box{
+
+      background:#fff8f0;
+
+      padding:25px;
+
+      border-radius:20px;
+
+      box-shadow:0 5px 15px rgba(0,0,0,0.08);
+
+      text-align:left;
+    }
+
+    .profile{
+      display:flex;
+      align-items:center;
+      gap:15px;
+      margin-bottom:15px;
+    }
+
+    .profile img{
+      width:60px;
+      height:60px;
+      border-radius:50%;
+      object-fit:cover;
+    }
+
+    .stars{
+      color:gold;
+      margin-bottom:10px;
+    }
+
+    /* RATING */
+
+    .rating-box{
+
+      width:90%;
+      max-width:700px;
+
+      margin:80px auto;
+
+      background:white;
+
+      padding:35px;
+
+      border-radius:20px;
+
+      box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .rating-title{
+
+      text-align:center;
+
+      color:#ff145e;
+
+      font-size:35px;
+
+      margin-bottom:25px;
+    }
+
+    .row{
+      display:flex;
+      align-items:center;
+      gap:15px;
+      margin:15px 0;
+    }
+
+    .label{
+      width:70px;
+    }
+
+    .bar-container{
+
+      flex:1;
+
+      background:#eee;
+
+      border-radius:20px;
+
+      overflow:hidden;
+    }
+
+    .bar{
+      height:18px;
+      background:#ff145e;
+    }
+
+    .bar-5{width:80%;}
+    .bar-4{width:65%;}
+    .bar-3{width:35%;}
+    .bar-2{width:20%;}
+    .bar-1{width:10%;}
+
+    /* FOOTER */
+
+    footer{
+
+      background:#111;
+
+      color:white;
+
+      padding:60px 5% 20px;
+    }
+
+    .footer-container{
+
+      display:grid;
+
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+      gap:40px;
+    }
+
+    .footer-section h4{
+
+      margin-bottom:15px;
+
+      color:#ff7a18;
+    }
+
+    .footer-section ul{
+      list-style:none;
+    }
+
+    .footer-section ul li{
+      margin:10px 0;
+    }
+
+    .footer-section ul li a{
+
+      text-decoration:none;
+
+      color:white;
+    }
+
+    .footer-section ul li a:hover{
+      color:#ff7a18;
+    }
+
+    .footer-bottom{
+
+      text-align:center;
+
+      margin-top:40px;
+
+      border-top:1px solid #444;
+
+      padding-top:20px;
+    }
+
+    /* RESPONSIVE */
+
+    @media(max-width:768px){
+
+      .hero-content h1{
+        font-size:45px;
+      }
+
+      .hero-content p{
+        font-size:18px;
+      }
+
+      .navbar{
+        flex-direction:column;
+        gap:20px;
+      }
+
+      .mySlides img{
+        height:350px;
+      }
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <!-- NAVBAR -->
+
+    <nav class="navbar">
+
+      <div class="logo">
+        OUR RESTAURANT
+      </div>
+
+      <div class="nav-links">
+
+        <a href="mainpage.html">HOME</a>
+        <a href="menu_chat.html">MENU</a>
+        <a href="tablebook.html">BOOK A TABLE</a>
+        <a href="onlineorder_up.html">ORDER ONLINE</a>
+        <a href="services.html">SERVICES</a>
+        <a href="about_us.html">ABOUT US</a>
+        <a href="signin_up.html">SIGN IN</a>
+
+      </div>
+
+    </nav>
+
+    <!-- HERO CONTENT -->
+
+    <div class="hero-content">
+
+      <h1>Welcome To Our Restaurant</h1>
+
+      <p>
+        Experience delicious food, beautiful ambiance,
+        and unforgettable dining moments with family and friends.
+      </p>
+
+      <a href="menu_chat.html" class="hero-btn">
+        Explore Menu
+      </a>
+
+    </div>
+
+  </section>
+
+  <!-- FOOD SLIDER -->
+
+  <section class="slider-section">
+
+    <h2 class="section-title">
+      Popular Dishes
+    </h2>
+
+    <div class="slideshow-container">
+
+      <div class="mySlides fade">
+        <img src="crispy_chicken.jpg">
+      </div>
+
+      <div class="mySlides fade">
+        <img src="food1.webp">
+      </div>
+
+      <div class="mySlides fade">
+        <img src="istockphoto-545286388-612x612.jpg">
+      </div>
+
+    </div>
+
+    <br>
+
+    <div style="text-align:center">
+
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+
+    </div>
+
+  </section>
+
+  <!-- CHEF SECTION -->
+
+  <section class="chef-section">
+
+    <h2 class="section-title">
+      Our Expert Chefs
+    </h2>
+
+    <div class="chef-container">
+
+      <div class="chef-card">
+        <img src="1.png">
+        <h3>Muddsar Qayyum</h3>
+      </div>
+
+      <div class="chef-card">
+        <img src="2.png">
+        <h3>Chef Isabella</h3>
+      </div>
+
+      <div class="chef-card">
+        <img src="3.png">
+        <h3>Chef Daniel</h3>
+      </div>
+
+      <div class="chef-card">
+        <img src="4.png">
+        <h3>Chef Sophia</h3>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- TESTIMONIALS -->
+
+  <section class="testimonials">
+
+    <h2 class="section-title">
+      What Customers Say
+    </h2>
+
+    <div class="testimonial-container">
+
+      <!-- BOX -->
+
+      <div class="testimonial-box">
+
+        <div class="profile">
+
+          <img src="IMG_20250202_143443~2.jpg">
+
+          <div>
+            <strong>Sreeparna Bhowmick</strong><br>
+            <small>sreeparnabhow8gmail.com</small>
+          </div>
+
+        </div>
+
+        <div class="stars">
+
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="far fa-star"></i>
+
+        </div>
+
+        <p>
+          The food was absolutely delicious and beautifully presented.
+          One of the best restaurant experiences ever!
+        </p>
+
+      </div>
+
+      <!-- BOX -->
+
+      <div class="testimonial-box">
+
+        <div class="profile">
+
+          <img src="IMG-20250329-WA0001.jpg">
+
+          <div>
+            <strong>Tanisha Das</strong><br>
+            <small>tanishadas3gmail.com</small>
+          </div>
+
+        </div>
+
+        <div class="stars">
+
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+
+        </div>
+
+        <p>
+          Amazing atmosphere and excellent service.
+          I highly recommend this restaurant to everyone.
+        </p>
+
+      </div>
+
+      <!-- BOX -->
+
+      <div class="testimonial-box">
+
+        <div class="profile">
+
+          <img src="dinner1.jpg">
+
+          <div>
+            <strong>Nandini Banik</strong><br>
+            <small>nandinibanik23gmail.com</small>
+          </div>
+
+        </div>
+
+        <div class="stars">
+
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+
+        </div>
+
+        <p>
+          Fresh ingredients, tasty dishes, and friendly staff.
+          I will definitely visit again soon!
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- RATING SECTION -->
+
+  <div class="rating-box">
+
+    <h2 class="rating-title">
+      User Ratings
+    </h2>
+
+    <div class="row">
+      <div class="label">5 Star</div>
+      <div class="bar-container"><div class="bar bar-5"></div></div>
+      <div>150</div>
+    </div>
+
+    <div class="row">
+      <div class="label">4 Star</div>
+      <div class="bar-container"><div class="bar bar-4"></div></div>
+      <div>63</div>
+    </div>
+
+    <div class="row">
+      <div class="label">3 Star</div>
+      <div class="bar-container"><div class="bar bar-3"></div></div>
+      <div>15</div>
+    </div>
+
+    <div class="row">
+      <div class="label">2 Star</div>
+      <div class="bar-container"><div class="bar bar-2"></div></div>
+      <div>6</div>
+    </div>
+
+    <div class="row">
+      <div class="label">1 Star</div>
+      <div class="bar-container"><div class="bar bar-1"></div></div>
+      <div>20</div>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="footer-container">
+
+      <div class="footer-section">
+
+        <h4>About Us</h4>
+
+        <p>
+          We provide delicious food with a cozy dining experience
+          and excellent customer service.
+        </p>
+
+      </div>
+
+      <div class="footer-section">
+
+        <h4>Quick Links</h4>
+
+        <ul>
+
+          <li><a href="mainpage.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="about_us.html">About Us</a></li>
+
+        </ul>
+
+      </div>
+
+      <div class="footer-section">
+
+        <h4>Contact Us</h4>
+
+        <p>Email: contact@restaurant.com</p>
+        <p>Phone: +91 9876543210</p>
+
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+
+      <p>
+        © 2026 Our Restaurant. All Rights Reserved.
+      </p>
+
+    </div>
+
+  </footer>
+
+  <!-- SLIDER SCRIPT -->
+
+  <script>
+
+    let slideIndex = 0;
+
+    showSlides();
+
+    function showSlides(){
+
+      let i;
+
+      let slides =
+      document.getElementsByClassName("mySlides");
+
+      let dots =
+      document.getElementsByClassName("dot");
+
+      for(i = 0; i < slides.length; i++){
+
+        slides[i].style.display = "none";
+      }
+
+      slideIndex++;
+
+      if(slideIndex > slides.length){
+
+        slideIndex = 1;
+      }
+
+      for(i = 0; i < dots.length; i++){
+
+        dots[i].className =
+        dots[i].className.replace(" active", "");
+      }
+
+      slides[slideIndex - 1].style.display = "block";
+
+      dots[slideIndex - 1].className += " active";
+
+      setTimeout(showSlides, 3000);
+    }
+
+  </script>
+
+</body>
+
+</html>
