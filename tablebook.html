@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Table Reservation</title>
+
+  <!-- GOOGLE FONT -->
+
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body{
+      background:#fff8f0;
+      color:#333;
+    }
+
+    /* HERO SECTION */
+
+    .header{
+
+      height:350px;
+
+      background:
+      linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+      url("food1.webp");
+
+      background-size:cover;
+      background-position:center;
+      background-repeat:no-repeat;
+
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+
+      padding:20px;
+    }
+
+    .slogan{
+      color:white;
+      font-size:45px;
+      font-family:'Dancing Script', cursive;
+      max-width:900px;
+      line-height:1.5;
+    }
+
+    /* BREADCRUMB */
+
+    .breadcrumb{
+      background:white;
+      padding:15px 30px;
+      font-size:16px;
+      box-shadow:0 2px 8px rgba(0,0,0,0.08);
+    }
+
+    .breadcrumb a{
+      text-decoration:none;
+      color:#ff145e;
+      font-weight:bold;
+    }
+
+    .breadcrumb span{
+      color:#555;
+    }
+
+    /* MAIN SECTION */
+
+    .main-container{
+      width:100%;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      padding:60px 20px;
+    }
+
+    /* FORM CARD */
+
+    .reservation-card{
+
+      width:100%;
+      max-width:700px;
+
+      background:white;
+
+      padding:40px;
+
+      border-radius:25px;
+
+      box-shadow:0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    .reservation-heading{
+      text-align:center;
+      color:#ff145e;
+      font-size:35px;
+      margin-bottom:10px;
+    }
+
+    .reservation-subtitle{
+      text-align:center;
+      color:#666;
+      margin-bottom:35px;
+      font-size:16px;
+    }
+
+    /* FORM */
+
+    .reservation-form{
+      width:100%;
+    }
+
+    .form-group{
+      margin-bottom:20px;
+    }
+
+    label{
+      display:block;
+      margin-bottom:8px;
+      font-weight:bold;
+      color:#444;
+    }
+
+    input,
+    select,
+    textarea{
+
+      width:100%;
+
+      padding:14px;
+
+      border:1px solid #ccc;
+
+      border-radius:12px;
+
+      font-size:15px;
+
+      transition:0.3s;
+      outline:none;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus{
+
+      border-color:#ff145e;
+
+      box-shadow:0 0 6px rgba(255,20,94,0.4);
+    }
+
+    textarea{
+      resize:none;
+    }
+
+    /* BUTTON */
+
+    .submit-btn{
+
+      width:100%;
+
+      padding:15px;
+
+      border:none;
+
+      border-radius:12px;
+
+      background:linear-gradient(to right,#ff145e,#ff7a18);
+
+      color:white;
+
+      font-size:18px;
+
+      font-weight:bold;
+
+      cursor:pointer;
+
+      transition:0.3s;
+    }
+
+    .submit-btn:hover{
+      transform:scale(1.02);
+      box-shadow:0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    /* SUCCESS MESSAGE */
+
+    .success-message{
+
+      display:none;
+
+      margin-top:20px;
+
+      text-align:center;
+
+      color:green;
+
+      font-weight:bold;
+
+      font-size:18px;
+    }
+
+    /* RESPONSIVE */
+
+    @media(max-width:768px){
+
+      .slogan{
+        font-size:30px;
+      }
+
+      .reservation-card{
+        padding:25px;
+      }
+
+      .reservation-heading{
+        font-size:28px;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- HERO -->
+
+  <div class="header">
+
+    <div class="slogan">
+      "I wanted to thank you for inviting me down for that amazing dinner night.
+      The food was extraordinary."
+    </div>
+
+  </div>
+
+  <!-- BREADCRUMB -->
+
+  <nav class="breadcrumb">
+
+    <a href="mainpage.html">HOME</a>
+
+    &gt;
+
+    <span>TABLE BOOKING</span>
+
+  </nav>
+
+  <!-- MAIN CONTENT -->
+
+  <div class="main-container">
+
+    <div class="reservation-card">
+
+      <h2 class="reservation-heading">
+        Table Reservation
+      </h2>
+
+      <p class="reservation-subtitle">
+        Book your table online quickly and easily
+      </p>
+
+      <!-- FORM -->
+
+      <form class="reservation-form" onsubmit="submitReservation(event)">
+
+        <!-- NAME -->
+
+        <div class="form-group">
+
+          <label for="name">Your Name</label>
+
+          <input
+          type="text"
+          id="name"
+          placeholder="Enter your full name"
+          required>
+
+        </div>
+
+        <!-- PHONE -->
+
+        <div class="form-group">
+
+          <label for="phone">Phone Number</label>
+
+          <input
+          type="tel"
+          id="phone"
+          placeholder="Enter your phone number"
+          required>
+
+        </div>
+
+        <!-- PEOPLE -->
+
+        <div class="form-group">
+
+          <label for="table">Book Table For</label>
+
+          <select id="table" required>
+
+            <option value="">Select</option>
+
+            <option>1 Person</option>
+            <option>2 People</option>
+            <option>3 People</option>
+            <option>4 People</option>
+
+          </select>
+
+        </div>
+
+        <!-- DATE -->
+
+        <div class="form-group">
+
+          <label for="date">Reservation Date</label>
+
+          <input type="date" id="date" required>
+
+        </div>
+
+        <!-- TIME -->
+
+        <div class="form-group">
+
+          <label for="time">Reservation Time</label>
+
+          <input type="time" id="time" required>
+
+        </div>
+
+        <!-- MESSAGE -->
+
+        <div class="form-group">
+
+          <label for="message">Special Request</label>
+
+          <textarea
+          id="message"
+          rows="4"
+          placeholder="Write your message here..."></textarea>
+
+        </div>
+
+        <!-- BUTTON -->
+
+        <button type="submit" class="submit-btn">
+
+          Submit Reservation
+
+        </button>
+
+      </form>
+
+      <!-- SUCCESS MESSAGE -->
+
+      <div id="successMessage" class="success-message">
+
+        ✅ Your Reservation Has Been Submitted Successfully!
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- JAVASCRIPT -->
+
+  <script>
+
+    function submitReservation(event){
+
+      event.preventDefault();
+
+      document.getElementById("successMessage").style.display = "block";
+    }
+
+  </script>
+
+</body>
+
+</html>

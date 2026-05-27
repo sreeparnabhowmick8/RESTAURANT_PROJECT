@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Restaurant Menu</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="restaurant.css">
+    
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body{
+            background:#fff8f0;
+            color:#333;
+        }
+
+        /* HERO SECTION */
+
+        .hh{
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+            url("food1.webp");
+            background-size: cover;
+            background-position: center;
+            text-align:center;
+            padding:70px 20px;
+        }
+
+        .hh h2{
+            color:white;
+            font-size:55px;
+            letter-spacing:2px;
+        }
+
+        /* NAVBAR */
+
+        .container{
+            display:flex;
+            justify-content:center;
+            flex-wrap:wrap;
+            gap:15px;
+            padding:20px;
+            background:black;
+        }
+
+        .button{
+            text-decoration:none;
+            color:white;
+            background:crimson;
+            padding:12px 22px;
+            border-radius:30px;
+            transition:0.3s;
+            font-weight:bold;
+        }
+
+        .button:hover{
+            background:orange;
+            transform:scale(1.05);
+        }
+
+        /* CATEGORY SECTION */
+
+        .link{
+            display:flex;
+            flex-wrap:wrap;
+            justify-content:center;
+            gap:25px;
+            padding:30px 20px;
+        }
+
+        .link a{
+            text-decoration:none;
+            color:#222;
+            text-align:center;
+            background:white;
+            padding:15px;
+            border-radius:15px;
+            width:120px;
+            box-shadow:0 4px 10px rgba(0,0,0,0.15);
+            transition:0.3s;
+            font-weight:bold;
+        }
+
+        .link a:hover{
+            transform:translateY(-5px);
+            background:orange;
+            color:white;
+        }
+
+        /* TITLES */
+
+        h1{
+            text-align:center;
+            margin-top:20px;
+            font-size:40px;
+        }
+
+        /* SLIDER */
+
+        .slider{
+            width:95%;
+            overflow:hidden;
+            margin:40px auto;
+            border-radius:20px;
+            box-shadow:0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .slider-track{
+            display:flex;
+            width:calc(500px * 14);
+            animation:scroll 30s linear infinite;
+        }
+
+        .slider-track img{
+            width:500px;
+            height:400px;
+            object-fit:cover;
+        }
+
+        @keyframes scroll{
+            0%{
+                transform:translateX(0);
+            }
+
+            100%{
+                transform:translateX(-3500px);
+            }
+        }
+
+        /* OFFER SECTION */
+
+        .offer{
+            background:orange;
+            color:white;
+            font-size:35px;
+            font-weight:bold;
+            padding:15px;
+            margin:20px 0;
+            overflow:hidden;
+            white-space:nowrap;
+        }
+
+        .offer span{
+            display:inline-block;
+            padding-left:100%;
+            animation:marquee 12s linear infinite;
+        }
+
+        @keyframes marquee{
+            0%{
+                transform:translateX(0);
+            }
+
+            100%{
+                transform:translateX(-100%);
+            }
+        }
+
+        /* MENU CARD */
+
+        .menucard{
+            display:flex;
+            justify-content:center;
+            flex-wrap:wrap;
+            gap:20px;
+            padding:30px;
+        }
+
+        .menucard img{
+            width:280px;
+            height:380px;
+            border-radius:15px;
+            box-shadow:0 5px 15px rgba(0,0,0,0.2);
+            transition:0.3s;
+        }
+
+        .menucard img:hover{
+            transform:scale(1.05);
+        }
+
+        /* FOOTER */
+
+        footer{
+            background:#111;
+            color:white;
+            padding:40px 20px 10px;
+        }
+
+        .footer-container{
+            display:flex;
+            justify-content:space-around;
+            flex-wrap:wrap;
+            gap:30px;
+        }
+
+        .footer-section{
+            max-width:300px;
+        }
+
+        .footer-section h4{
+            margin-bottom:15px;
+            color:orange;
+        }
+
+        .footer-section ul{
+            list-style:none;
+        }
+
+        .footer-section ul li{
+            margin-bottom:10px;
+        }
+
+        .footer-section ul li a{
+            text-decoration:none;
+            color:white;
+        }
+
+        .footer-section ul li a:hover{
+            color:orange;
+        }
+
+        .footer-bottom{
+            text-align:center;
+            margin-top:30px;
+            border-top:1px solid #444;
+            padding-top:15px;
+        }
+
+        /* RESPONSIVE */
+
+        @media(max-width:768px){
+
+            .hh h2{
+                font-size:38px;
+            }
+
+            .slider-track img{
+                width:300px;
+                height:250px;
+            }
+
+            .slider-track{
+                width:calc(300px * 14);
+            }
+
+            .button{
+                padding:10px 15px;
+                font-size:14px;
+            }
+
+            h1{
+                font-size:30px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- HERO SECTION -->
+
+    <div class="hh">
+        <h2>OUR RESTAURANT</h2>
+    </div>
+
+    <!-- NAVBAR -->
+
+    <div class="container">
+
+        <a href="mainpage.html" class="button">HOME</a>
+        <a href="menu_chat.html" class="button">MENU</a>
+        <a href="tablebook.html" class="button">BOOK A TABLE</a>
+        <a href="onlineorder_up.html" class="button">ORDER ONLINE</a>
+        <a href="services.html" class="button">SERVICES</a>
+        <a href="about_us.html" class="button">ABOUT US</a>
+        <a href="signin_up.html" class="button">SIGN IN</a>
+
+    </div>
+
+    <!-- FOOD CATEGORY -->
+
+    <div class="link">
+
+        <a href="pizza.html">🍕<br><br>Pizza</a>
+        <a href="noodles.html">🍜<br><br>Noodles</a>
+        <a href="coffee.html">☕<br><br>Coffee & Shakes</a>
+        <!-- <a href="rice.html">🍚<br><br>Rice</a> -->
+        <a href="moctail.html">🍹<br><br>Mocktails</a>
+        <!-- <a href="burger.html">🍔<br><br>Burger</a> -->
+        <a href="chicken.html">🍗<br><br>Chicken</a>
+        <a href="biriyani.html">🍛<br><br>Biriyani</a>
+        <a href="momo.html">🥟<br><br>Momo</a>
+        <a href="mutton.html">🍖<br><br>Mutton</a>
+
+    </div>
+
+    <!-- SPECIAL ITEMS -->
+
+    <h1 style="color:crimson;">Popular / Special Items</h1>
+
+    <div class="slider">
+
+        <div class="slider-track">
+
+            <img src="noodles.jpg" alt="">
+            <img src="chicken.jpg" alt="">
+            <img src="burger.jpg" alt="">
+            <img src="chilichicken.jpg" alt="">
+            <img src="coffee.jpg" alt="">
+            <img src="moctail.jpg" alt="">
+            <img src="oreo shake.jpg" alt="">
+
+            <!-- DUPLICATE FOR SMOOTH LOOP -->
+
+            <img src="noodles.jpg" alt="">
+            <img src="chicken.jpg" alt="">
+            <img src="burger.jpg" alt="">
+            <img src="chilichicken.jpg" alt="">
+            <img src="coffee.jpg" alt="">
+            <img src="moctail.jpg" alt="">
+            <img src="oreo shake.jpg" alt="">
+
+        </div>
+
+    </div>
+
+    <!-- OFFER -->
+
+    <div class="offer">
+        <span>🔥 Flat 30% Discount On All Food Items 🔥</span>
+    </div>
+
+    <!-- MENU CARD -->
+
+    <h1 style="color:deeppink;">Our Restaurant Menu Card</h1>
+
+    <div class="menucard">
+
+        <img src="1menu.jpg" alt="">
+        <img src="2 menu.jpg" alt="">
+        <img src="3menu.jpg" alt="">
+        <img src="4menu.jpg" alt="">
+
+    </div>
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="footer-container">
+
+            <div class="footer-section">
+                <h4>About Us</h4>
+                <p>
+                    We provide delicious food with excellent service
+                    and a cozy atmosphere for every customer.
+                </p>
+            </div>
+
+            <div class="footer-section">
+
+                <h4>Quick Links</h4>
+
+                <ul>
+                    <li><a href="mainpage.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="about_us.html">About Us</a></li>
+                </ul>
+
+            </div>
+
+            <div class="footer-section">
+
+                <h4>Contact Us</h4>
+
+                <p>Email: contact@restaurant.com</p>
+                <p>Phone: +91 9876543210</p>
+
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 Our Restaurant. All Rights Reserved.</p>
+        </div>
+
+    </footer>
+
+</body>
+</html>

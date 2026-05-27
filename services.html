@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Restaurant Services</title>
+
+  <!-- GOOGLE FONT -->
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- FONT AWESOME -->
+
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins', sans-serif;
+    }
+
+    body{
+      background:#fff8f0;
+      color:#333;
+      line-height:1.7;
+    }
+
+    /* HEADER */
+
+    header{
+
+      background:
+      linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+      url("food1.webp");
+
+      background-size:cover;
+      background-position:center;
+
+      height:70vh;
+
+      color:white;
+
+      display:flex;
+      flex-direction:column;
+
+      justify-content:center;
+      align-items:center;
+
+      text-align:center;
+
+      padding:20px;
+    }
+
+    header h1{
+
+      font-size:70px;
+
+      margin-bottom:15px;
+
+      letter-spacing:3px;
+    }
+
+    header p{
+
+      font-size:22px;
+
+      max-width:700px;
+    }
+
+    /* BREADCRUMB */
+
+    .breadcrumb{
+
+      position:absolute;
+
+      top:20px;
+      left:40px;
+
+      background:rgba(255,255,255,0.15);
+
+      padding:10px 18px;
+
+      border-radius:30px;
+
+      backdrop-filter:blur(5px);
+    }
+
+    .breadcrumb a{
+
+      color:white;
+
+      text-decoration:none;
+
+      font-weight:600;
+    }
+
+    .breadcrumb span{
+      color:#ffcccb;
+    }
+
+    /* NAVBAR */
+
+    nav{
+
+      margin-top:25px;
+
+      display:flex;
+
+      gap:20px;
+
+      flex-wrap:wrap;
+    }
+
+    nav a{
+
+      color:white;
+
+      text-decoration:none;
+
+      font-weight:500;
+
+      padding:10px 20px;
+
+      border:1px solid white;
+
+      border-radius:30px;
+
+      transition:0.3s;
+    }
+
+    nav a:hover{
+
+      background:#ff145e;
+
+      border-color:#ff145e;
+    }
+
+    /* SERVICES SECTION */
+
+    .services{
+
+      padding:90px 8%;
+    }
+
+    .section-title{
+
+      text-align:center;
+
+      margin-bottom:60px;
+    }
+
+    .section-title h2{
+
+      font-size:45px;
+
+      color:#ff145e;
+
+      margin-bottom:10px;
+    }
+
+    .section-title p{
+
+      color:#666;
+
+      font-size:18px;
+    }
+
+    .service-container{
+
+      display:grid;
+
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+      gap:30px;
+    }
+
+    .service-box{
+
+      background:white;
+
+      padding:35px 25px;
+
+      border-radius:20px;
+
+      text-align:center;
+
+      box-shadow:0 5px 15px rgba(0,0,0,0.08);
+
+      transition:0.3s;
+    }
+
+    .service-box:hover{
+
+      transform:translateY(-8px);
+    }
+
+    .service-box i{
+
+      font-size:50px;
+
+      color:#ff145e;
+
+      margin-bottom:20px;
+    }
+
+    .service-box h3{
+
+      font-size:24px;
+
+      margin-bottom:15px;
+    }
+
+    .service-box p{
+      color:#666;
+    }
+
+    /* MENU SECTION */
+
+    .menu{
+
+      background:#fff;
+
+      padding:90px 8%;
+    }
+
+    .menu-grid{
+
+      display:grid;
+
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+      gap:25px;
+
+      margin-top:40px;
+    }
+
+    .menu-card{
+
+      background:#fff8f0;
+
+      border-radius:20px;
+
+      overflow:hidden;
+
+      box-shadow:0 5px 15px rgba(0,0,0,0.08);
+
+      transition:0.3s;
+    }
+
+    .menu-card:hover{
+
+      transform:scale(1.03);
+    }
+
+    .menu-card img{
+
+      width:100%;
+
+      height:220px;
+
+      object-fit:cover;
+    }
+
+    .menu-content{
+
+      padding:20px;
+    }
+
+    .menu-content h4{
+
+      font-size:24px;
+
+      margin-bottom:10px;
+    }
+
+    .price{
+
+      color:#ff145e;
+
+      font-weight:600;
+
+      font-size:20px;
+    }
+
+    /* BUTTONS */
+
+    .button-group{
+
+      margin-top:35px;
+
+      display:flex;
+
+      gap:20px;
+
+      justify-content:center;
+
+      flex-wrap:wrap;
+    }
+
+    .btn{
+
+      padding:14px 28px;
+
+      border:none;
+
+      border-radius:30px;
+
+      font-size:16px;
+
+      cursor:pointer;
+
+      transition:0.3s;
+
+      font-weight:600;
+    }
+
+    .customer-btn{
+
+      background:#ff145e;
+
+      color:white;
+    }
+
+    .order-btn{
+
+      background:#111;
+
+      color:white;
+    }
+
+    .btn:hover{
+
+      transform:translateY(-3px);
+      opacity:0.9;
+    }
+
+    /* CONTACT */
+
+    .contact{
+
+      padding:90px 8%;
+
+      text-align:center;
+    }
+
+    .contact-box{
+
+      max-width:700px;
+
+      margin:auto;
+
+      background:white;
+
+      padding:40px;
+
+      border-radius:25px;
+
+      box-shadow:0 5px 15px rgba(0,0,0,0.08);
+    }
+
+    .contact-box p{
+
+      margin:15px 0;
+
+      font-size:18px;
+    }
+
+    /* POPUP */
+
+    .popup{
+
+      display:none;
+
+      position:fixed;
+
+      top:0;
+      left:0;
+
+      width:100%;
+      height:100%;
+
+      background:rgba(0,0,0,0.6);
+
+      z-index:1000;
+    }
+
+    .popup-content{
+
+      background:white;
+
+      width:90%;
+      max-width:450px;
+
+      margin:100px auto;
+
+      padding:35px;
+
+      border-radius:20px;
+
+      position:relative;
+
+      text-align:center;
+
+      animation:popup 0.4s ease;
+    }
+
+    @keyframes popup{
+
+      from{
+        transform:translateY(-30px);
+        opacity:0;
+      }
+
+      to{
+        transform:translateY(0);
+        opacity:1;
+      }
+    }
+
+    .popup-content h3{
+
+      color:#ff145e;
+
+      margin-bottom:20px;
+    }
+
+    .popup-content a{
+
+      color:#ff145e;
+
+      text-decoration:none;
+
+      font-weight:600;
+    }
+
+    .close{
+
+      position:absolute;
+
+      top:15px;
+      right:20px;
+
+      font-size:30px;
+
+      cursor:pointer;
+
+      color:#333;
+    }
+
+    /* FOOTER */
+
+    footer{
+
+      background:#111;
+
+      color:white;
+
+      text-align:center;
+
+      padding:25px;
+    }
+
+    /* RESPONSIVE */
+
+    @media(max-width:768px){
+
+      header h1{
+        font-size:45px;
+      }
+
+      header p{
+        font-size:18px;
+      }
+
+      .section-title h2{
+        font-size:35px;
+      }
+
+      .breadcrumb{
+        left:15px;
+        top:15px;
+      }
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <!-- HEADER -->
+
+  <header>
+
+    <!-- BREADCRUMB -->
+
+    <nav class="breadcrumb">
+
+      <a href="mainpage.html">HOME</a>
+
+      &gt;
+
+      <span>SERVICES</span>
+
+    </nav>
+
+    <h1>Our Restaurant</h1>
+
+    <p>
+      Experience delicious food, warm hospitality,
+      and premium restaurant services.
+    </p>
+
+    <!-- NAVIGATION -->
+
+    <nav>
+
+      <a href="#services">Services</a>
+
+      <a href="#menu">Menu</a>
+
+      <a href="#contact">Contact</a>
+
+    </nav>
+
+    <!-- BUTTONS -->
+
+    <div class="button-group">
+
+      <button class="btn customer-btn" onclick="openPopup()">
+        Customer Service
+      </button>
+
+      <button class="btn order-btn" onclick="openOrderPopup()">
+        Order Online
+      </button>
+
+    </div>
+
+  </header>
+
+  <!-- SERVICES -->
+
+  <section class="services" id="services">
+
+    <div class="section-title">
+
+      <h2>Our Services</h2>
+
+      <p>
+        We provide high-quality services to make your dining experience unforgettable.
+      </p>
+
+    </div>
+
+    <div class="service-container">
+
+      <div class="service-box">
+
+        <i class="fas fa-utensils"></i>
+
+        <h3>Fine Dining</h3>
+
+        <p>
+          Enjoy delicious meals prepared by our expert chefs.
+        </p>
+
+      </div>
+
+      <div class="service-box">
+
+        <i class="fas fa-motorcycle"></i>
+
+        <h3>Fast Delivery</h3>
+
+        <p>
+          Quick and fresh food delivery right to your doorstep.
+        </p>
+
+      </div>
+
+      <div class="service-box">
+
+        <i class="fas fa-calendar-check"></i>
+
+        <h3>Table Booking</h3>
+
+        <p>
+          Reserve your favorite table for special occasions.
+        </p>
+
+      </div>
+
+      <div class="service-box">
+
+        <i class="fas fa-birthday-cake"></i>
+
+        <h3>Party Orders</h3>
+
+        <p>
+          Special catering services for birthdays and celebrations.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- MENU -->
+
+  <section class="menu" id="menu">
+
+    <div class="section-title">
+
+      <h2>Popular Dishes</h2>
+
+      <p>
+        Taste our customers' favorite dishes.
+      </p>
+
+    </div>
+
+    <div class="menu-grid">
+
+      <div class="menu-card">
+
+        <img src="pizza.jpg" alt="Pizza">
+
+        <div class="menu-content">
+
+          <h4>Margherita Pizza</h4>
+
+          <p>Cheesy and delicious Italian pizza.</p>
+
+          <div class="price">₹299</div>
+
+        </div>
+
+      </div>
+
+      <div class="menu-card">
+
+        <img src="burger.jpg" alt="Burger">
+
+        <div class="menu-content">
+
+          <h4>Chicken Burger</h4>
+
+          <p>Loaded with crispy chicken and fresh veggies.</p>
+
+          <div class="price">₹199</div>
+
+        </div>
+
+      </div>
+
+      <div class="menu-card">
+
+        <img src="Kolkata-chicken-biryani.jpg" alt="Biriyani">
+
+        <div class="menu-content">
+
+          <h4>Chicken Biriyani</h4>
+
+          <p>Authentic spicy biriyani with rich flavors.</p>
+
+          <div class="price">₹349</div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- CONTACT -->
+
+  <section class="contact" id="contact">
+
+    <div class="section-title">
+
+      <h2>Contact Us</h2>
+
+      <p>
+        Reach out to us anytime.
+      </p>
+
+    </div>
+
+    <div class="contact-box">
+
+      <p><i class="fas fa-envelope"></i> info@restaurant.com</p>
+
+      <p><i class="fas fa-phone"></i> +91 9876543210</p>
+
+      <p><i class="fas fa-location-dot"></i> Kolkata, India</p>
+
+    </div>
+
+  </section>
+
+  <!-- CUSTOMER SERVICE POPUP -->
+
+  <div id="popup" class="popup">
+
+    <div class="popup-content">
+
+      <span class="close" onclick="closePopup()">&times;</span>
+
+      <h3>Customer Service</h3>
+
+      <p>
+        Need help? Our support team is available 24/7.
+      </p>
+
+      <p>
+        Email:
+        <a href="mailto:support@restaurant.com">
+          support@restaurant.com
+        </a>
+      </p>
+
+      <p>
+        Phone: +91 9876543210
+      </p>
+
+    </div>
+
+  </div>
+
+  <!-- ORDER POPUP -->
+
+  <div id="order-popup" class="popup">
+
+    <div class="popup-content">
+
+      <span class="close" onclick="closeOrderPopup()">&times;</span>
+
+      <h3>Order Online</h3>
+
+      <p>
+        Online ordering available every day from 10AM to 11PM.
+      </p>
+
+      <p>
+        <a href="onlineorder_up.html">
+          Click here to order food
+        </a>
+      </p>
+
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <p>
+      © 2026 Our Restaurant. All Rights Reserved.
+    </p>
+
+  </footer>
+
+  <!-- JAVASCRIPT -->
+
+  <script>
+
+    function openPopup(){
+
+      document.getElementById("popup").style.display = "block";
+    }
+
+    function closePopup(){
+
+      document.getElementById("popup").style.display = "none";
+    }
+
+    function openOrderPopup(){
+
+      document.getElementById("order-popup").style.display = "block";
+    }
+
+    function closeOrderPopup(){
+
+      document.getElementById("order-popup").style.display = "none";
+    }
+
+    window.onclick = function(event){
+
+      let popup = document.getElementById("popup");
+
+      let orderPopup = document.getElementById("order-popup");
+
+      if(event.target == popup){
+
+        popup.style.display = "none";
+      }
+
+      if(event.target == orderPopup){
+
+        orderPopup.style.display = "none";
+      }
+    }
+
+  </script>
+
+</body>
+
+</html>
